@@ -1,0 +1,125 @@
+/* Document-wide stuff*/
+
+html{
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    line-height: 1.5;
+    background:rgb(255, 255, 255);
+    color:rgb(34, 34, 34);
+}
+
+a {
+    color:rgb(34, 34, 34);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Resume container*/
+
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 32px;
+    background:rgb(209, 209, 209);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Sections */
+
+section {
+    border-top:1px solid rgb(0, 0, 0);
+    margin-bottom:10px;
+    padding-top: 10px;
+}
+
+section:first-child {
+    border-top: None;
+}
+
+section:last-child {
+    border-top: None;
+}
+
+.section-title {
+    font-size: 18px;
+}
+
+/* Title Section */
+.title {
+    font-size: 50px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Experience */
+
+.job-company-container {
+    display: flex;
+    justify-content:space-between;
+    font-size: 18px;
+}
+
+.job-title-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.job-content {
+    margin-top: 10px;
+}
+
+/* Education */
+
+.education-title-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    
+}
+
+.education-cu {
+    margin-bottom: 20px;
+}
+
+/* Skills */
+
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Hobbies */
+
+.hobbies-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 10px;
+}
+
+/* Hitcount */
+
+.hitcount-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 12;
+}
