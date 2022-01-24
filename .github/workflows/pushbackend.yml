@@ -1,4 +1,4 @@
-name: main
+name: pushbackend
 on: push
 env:
   java-version: '11'
