@@ -1,0 +1,51 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description:
+  cloud formation template
+  
+Globals:
+  Function:
+    Runtime: java11
+    MemorySize: 512
+
+Resources:
+  dbGet:
+    DeletionPolicy: Retain
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: handler.LambdaFunction::handleRequest
+      Runtime: java11
+      Architectures:
+        - arm64
+      Events:
+        clicksAPI:
+          Type: Api 
+          Properties:
+            Path: /
+            Method: get
+      Environment:
+        Variables:
+          DB_NAME: clickTable
+          DB_KEY: tablekey
+      Policies:
+        - AmazonDynamoDBFullAccess
+
+  clickTable:
+    DeletionPolicy: Retain
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      PrimaryKey:
+        Name: tablekey
+        Type: String
+      TableName: clickTable
+      ProvisionedThroughput:
+        ReadCapacityUnits: 2
+        WriteCapacityUnits: 2
+
+Outputs:
+  clicksAPI:
+    Description: "API that returns new view count when invoked"
+    Value: "https://xob8yljli1.execute-api.us-east-1.amazonaws.com/alpha"
+
+
